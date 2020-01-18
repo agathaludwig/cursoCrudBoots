@@ -63,9 +63,17 @@
       <div class="form-group">
         <label> Fornecedor </label>
         <select class="form-control" name="fornecedor" required>
-          <option>A</option>
-          <option>B</option>
-          <option>C</option>
+          <!-- <option> Selecione </option> -->
+          <?php
+          include 'conexao.php';
+          $sql2 = "SELECT * FROM fornecedor ORDER BY nomefornecedor ASC";
+          $buscar2 = mysqli_query($conexao, $sql2);
+          while ($array2 = mysqli_fetch_array($buscar2)) {
+            $idfornecedor = $array2['idfornecedor'];
+            $nomefornecedor = $array2['nomefornecedor'];
+          ?>
+            <option> <?php echo $nomefornecedor; ?> </option>
+          <?php } ?>
         </select>
       </div>
       <div style="text-align: right">

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title> Adicionar Categoria </title>
+  <title> Adicionar Fornecedor </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <style type="text/css">
@@ -22,21 +22,19 @@
 <body>
 
   <div class="container" id="tamanhoContainer" style="margin-top: 40px">
-    <h4> Cadastro de Categoria</h4>
-    <form action="_inserirCategoria.php" method="post" style="margin-top: 20px">
+    <h4> Cadastro de Fornecedor</h4>
+    <form action="_inserirFornecedor.php" method="post" style="margin-top: 20px">
 
       <div class="form-group">
-        <label> Nome da categoria </label>
-        <input type="text" class="form-control" name="nomecategoria" placeholder="Nome" autocomplete="off" required>
+        <label> Nome do fornecedor </label>
+        <input type="text" class="form-control" name="nomefornecedor" placeholder="Nome" autocomplete="off" required>
       </div>
 
       <div style="text-align: right">
         <a href="index.php" role="button" class="btn btn-sm btn-primary">Voltar</a>
         <button type="submit" id="botao" class="btn btn-sm">Cadastrar</button>
       </div>
-      
     </form>
-    
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

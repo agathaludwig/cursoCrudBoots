@@ -4,7 +4,7 @@ include 'conexao.php';
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM `estoque` WHERE idestoque = $id";
+$sql = "DELETE FROM `categoria` WHERE idcategoria = $id";
 
 $deletar = mysqli_query($conexao, $sql);
 
@@ -14,11 +14,11 @@ $deletar = mysqli_query($conexao, $sql);
 
 <div class="container" style="width: 500px; margin-top: 20px">
     <center>
-        <h4>Produto excluído com sucesso! </h4>
+        <h4>Categoria excluída com sucesso! </h4>
     </center>
     <div style="padding-top: 20px">
         <center>
-            <a href="listarProdutos.php" role="button" class="btn btn-sm btn-primary">Voltar</a>
+            <a href="listarCategorias.php" role="button" class="btn btn-sm btn-primary">Voltar</a>
         </center>
     </div>
 </div>

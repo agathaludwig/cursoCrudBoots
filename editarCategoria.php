@@ -9,7 +9,7 @@ $id = $_GET['id'];
 
 <head>
   <meta charset="utf-8">
-  <title> Formulário de Cadastro </title>
+  <title> Editar Categoria </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <style type="text/css">
@@ -29,53 +29,21 @@ $id = $_GET['id'];
 <body>
 
   <div class="container" id="tamanhoContainer" style="margin-top: 40px">
-    <h4> Editar Cadastro </h4>
-    <form action="_atualizarProduto.php" method="post" style="margin-top: 20px">
+    <h4> Editar Categoria </h4>
+    <form action="_atualizarCategoria.php" method="post" style="margin-top: 20px">
       <?php
-      $sql = "SELECT * FROM `estoque` WHERE idestoque = $id ";
+      $sql = "SELECT * FROM `categoria` WHERE idcategoria = $id ";
       $busca = mysqli_query($conexao, $sql);
       while ($array = mysqli_fetch_array($busca)) {
-        $idestoque = $array['idestoque'];
-        $nroprod = $array['nroprod'];
-        $nomeprod = $array['nomeprod'];
-        $categoria = $array['categoria'];
-        $quantidade = $array['quantidade'];
-        $fornecedor = $array['fornecedor'];
+        $idcategoria = $array['idcategoria'];
+        $nomecategoria = $array['nomecategoria'];
       ?>
         <div class="form-group">
-          <label> Número do produto </label>
-          <input type="number" class="form-control" name="nroprod" value="<?php echo $nroprod ?>" disabled>
+          <label> Nome da categoria </label>
+          <input type="text" class="form-control" name="nomecategoria" value="<?php echo $nomecategoria ?>">
           <input type="number" class="form-control" name="id" value="<?php echo $id ?>" style="display: none">
         </div>
 
-        <div class="form-group">
-          <label> Nome do produto </label>
-          <input type="text" class="form-control" name="nomeprod" value="<?php echo $nomeprod ?>">
-        </div>
-
-        <div class="form-group">
-          <label> Categoria do produto </label>
-          <select class="form-control" name="categoria">
-            <option>Periféricos</option>
-            <option>Hardware</option>
-            <option>Software</option>
-            <option>Celulares</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label> Quantidade do produto </label>
-          <input type="number" class="form-control" name="quantidade" value="<?php echo $quantidade ?>">
-        </div>
-
-        <div class="form-group">
-          <label> Fornecedor </label>
-          <select class="form-control" name="fornecedor">
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
-          </select>
-        </div>
       <?php } ?>
       <div style="text-align: right">
         <button type="submit" id="botao" class="btn btn-sm" id="botao">Atualizar</button>

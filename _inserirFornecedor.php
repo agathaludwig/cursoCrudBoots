@@ -2,11 +2,11 @@
 
 include 'conexao.php';
 
-$id = $_GET['id'];
+$nomefornecedor = $_POST['nomefornecedor'];
 
-$sql = "DELETE FROM `estoque` WHERE idestoque = $id";
+$sql = "INSERT INTO `fornecedor`(`nomefornecedor`) VALUES ('$nomefornecedor')";
 
-$deletar = mysqli_query($conexao, $sql);
+$inserir = mysqli_query($conexao, $sql);
 
 ?>
 
@@ -14,11 +14,11 @@ $deletar = mysqli_query($conexao, $sql);
 
 <div class="container" style="width: 500px; margin-top: 20px">
     <center>
-        <h4>Produto excluído com sucesso! </h4>
+        <h4>Fornecedor cadastrado com sucesso! </h4>
     </center>
     <div style="padding-top: 20px">
         <center>
-            <a href="listarProdutos.php" role="button" class="btn btn-sm btn-primary">Voltar</a>
+            <a href="adicionarFornecedor.php" role="button" class="btn btn-sm btn-primary">Cadastrar novo fornecedor</a>
         </center>
     </div>
 </div>

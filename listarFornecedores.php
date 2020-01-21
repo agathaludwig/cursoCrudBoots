@@ -36,7 +36,7 @@
         </tr>
     </table>
     <div style="text-align: right">
-      <a href="index.php" role="button" class="btn btn-sm btn-primary">Voltar</a>
+      <a href="menu.php" role="button" class="btn btn-sm btn-primary">Voltar</a>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

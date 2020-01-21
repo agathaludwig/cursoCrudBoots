@@ -3,35 +3,53 @@
 
 <head>
   <meta charset="utf-8">
-  <title> Lista de categorias </title>
+  <title> Lista de usuários ativos </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/bb54122f21.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="container" style="margin-top: 40px; width: 500px">
-    <h3> Lista de categorias </h3>
+  <div class="container" style="margin-top: 40px">
+    <h3> Lista de usuários ativos </h3>
     <br>
     <table class="table">
-      <thead>
+    <thead>
         <tr>
-          <th scope="col">Nome da categoria</th>
+          <th scope="col">Nome</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Nível de acesso</th>
           <th scope="col">Ação</th>
         </tr>
       </thead>
+
       <?php
       include 'conexao.php';
-      $sql = "SELECT * FROM `categoria`";
+      $sql = "SELECT * FROM `usuario` WHERE status='Ativo'";
       $busca = mysqli_query($conexao, $sql);
 
       while ($array = mysqli_fetch_array($busca)) {
-        $idcategoria = $array['idcategoria'];
-        $nomecategoria = $array['nomecategoria'];
+        $idusuario = $array['idusuario'];
+        $nomeusuario = $array['nomeusuario'];
+        $emailusuario = $array['emailusuario'];
+        $nivelusuario = $array['nivelusuario'];
       ?>
         <tr>
-          <td><?php echo $nomecategoria ?></td>
-          <td><a class="btn btn-warning btn-sm" style="color:#fff" href="editarCategoria.php?id=<?php echo $idcategoria ?>" role="button"><i class="far fa-edit"></i>&nbsp;Editar</a>
-            <a class="btn btn-danger btn-sm" style="color:#fff" href="deletarCategoria.php?id=<?php echo $idcategoria ?>" role="button"><i class="far fa-trash-alt"></i>&nbsp;Excluir</a></td>
+          <td><?php echo $nomeusuario ?></td>
+          <td><?php echo $emailusuario ?></td>
+          <td><?php 
+            if ($nivelusuario == 1) {
+                echo "Administrador";
+            }
+            if ($nivelusuario == 2) {
+                echo "Funcionário";
+            }
+            if ($nivelusuario == 3) {
+                echo "Conferente";          
+            }
+            ?></td>
+
+          <td><a class="btn btn-warning btn-sm" style="color:#fff" href="editarUsuario.php?id=<?php echo $idusuario ?>" role="button"><i class="far fa-edit"></i>&nbsp;Editar</a>
+            <a class="btn btn-danger btn-sm" style="color:#fff" href="_deletarUsuario.php?id=<?php echo $idusuario ?>" role="button"><i class="far fa-trash-alt"></i>&nbsp;Excluir</a></td>
         <?php } ?>
         </tr>
     </table>

@@ -3,56 +3,62 @@
 
 <head>
   <meta charset="utf-8">
-  <title> Menu de Estoque </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TAG responsivo -->
+  <title> Tela de login </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style type="text/css">
+  #tamanho {
+    margin-top: 40px;
+    width: 350px;
+    border-radius: 15px;
+    border: 2px solid #f3f3f3;
+    -webkit-box-shadow: 10px 10px 31px -5px rgba(163,163,163,1);
+    -moz-box-shadow: 10px 10px 31px -5px rgba(163,163,163,1);
+    box-shadow: 10px 10px 31px -5px rgba(163,163,163,1);
+    padding: 25px;
+  }
+</style>
+
+
 </head>
 
 <body>
-  <div class="container" style="margin-top: 100px">
-    <div class="row">
 
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Adicionar produto</h5>
-            <p class="card-text">Opção para adicionar produto em estoque.</p>
-            <a href="adicionarProduto.php" class="btn btn-primary">Cadastrar produto</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Lista de produtos</h5>
-            <p class="card-text">Opção para visualizar, editar ou excluir os produtos já cadastrados.</p>
-            <a href="listarProdutos.php" class="btn btn-primary">Listar produtos</a>
-          </div>
-        </div>
-      </div>
+<div class="container" id="tamanho">
+<center>
+  <img src="img/cadeado.png" width=125px hight=125px>
+</center>
 
-      <div class="col-sm-6" style="margin-top: 20px">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Adicionar categoria</h5>
-            <p class="card-text">Opção para adicionar novas categorias de produtos.</p>
-            <a href="adicionarCategoria.php" class="btn btn-primary">Cadastrar categoria</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6" style="margin-top: 20px">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Adicionar fornecedor</h5>
-            <p class="card-text">Opção para adicionar novos fornecedores de produtos.</p>
-            <a href="adicionarFornecedor.php" class="btn btn-primary">Cadastrar fornecedor</a>
-          </div>
-        </div>
-      </div>
+  <form action="index1.php" method="post" style="margin-top: 20px">
+    <div class="form-group">
+      <label> Usuário </label>
+      <input type="text" class="form-control" name="usuario" placeholder="Usuário" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+      <label> Senha </label>
+      <input type="password" class="form-control" name="senha" placeholder="Senha" autocomplete="off" required>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <div style="text-align: right">
+      <button type="submit" class="btn btn-sm btn-success">Acessar</button>
+    </div>
+  </form>
+</div>
+<center>
+<div style="margin-top: 20px">
+  <small>Se você não possui cadastro, clique <a href="cadastro_usuario_externo.php">aqui </a>.</small>
+</div>
+</center>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+  crossorigin="anonymous"></script>
 </body>
 
 </html>

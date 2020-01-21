@@ -45,9 +45,9 @@ if(!isset($_SESSION['usuario'])) {
         <label> Nível de Acesso</label>
         <select class="form-control" name="nivelusuario">
         <!-- <optgroup> agrupa as opções do option -->
-          <option value="1">Administrador</option>
-          <option value="2">Funcionário</option>
-          <option value="3">Conferente</option>
+          <option value="1" <?php if(1 == $nivelusuario ){ echo "selected";}  ?> >Administrador</option>
+          <option value="2" <?php if(2 == $nivelusuario ){ echo "selected";}  ?> >Funcionário</option>
+          <option value="3" <?php if(3 == $nivelusuario ){ echo "selected";}  ?> >Conferente</option>
         </select>
         <!-- FIXME Como deixar a opção já selecionada -->
       </div>

@@ -5,6 +5,7 @@
     <center>
         <h4>Você ainda não possui cadastro.</h4>
         <h5>Mas não tem problema, clique <a href="cadastro_usuario_externo.php">aqui</a> para cadastrar.</h5>
+        <h5>Se você já cadastrou e ainda assim não consegue acessar, seu cadastro está pendente de aprovação. Tente novamente mais tarde.</h5>
     </center>
     <div style="padding-top: 20px">
         <center>

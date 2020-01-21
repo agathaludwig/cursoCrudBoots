@@ -5,7 +5,7 @@ include 'script/password.php';
 $usuario = $_POST['usuario'];
 $senhainformada = $_POST['senha'];
 
-$sql = "SELECT emailusuario, senhausuario  FROM usuario WHERE emailusuario = '$usuario' AND status = 'Ativo'";
+$sql = "SELECT emailusuario, senhausuario, status  FROM usuario WHERE emailusuario = '$usuario'";
 $buscar = mysqli_query($conexao, $sql);
 
 echo $total = mysqli_num_rows($buscar);
@@ -14,9 +14,8 @@ while ($array = mysqli_fetch_array($buscar)) {
     $senha = $array['senhausuario'];
     $senhadecodificada = sha1($senhainformada);
 
-
-    if ($total > 0) {
-        echo "teste";
+    if ($total > 0 && $array['status'] == 'Ativo') {
+        
         if ($senha == $senhadecodificada) {
             session_start();
             $_SESSION['usuario'] = $usuario;
@@ -27,6 +26,7 @@ while ($array = mysqli_fetch_array($buscar)) {
         }
     }
     else {
+        echo "teste";
         header("Location: erro.php");
     }
 }

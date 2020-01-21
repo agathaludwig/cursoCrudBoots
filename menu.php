@@ -8,8 +8,30 @@
 </head>
 
 <body>
+<?php
+
+session_start();
+$usuario = $_SESSION['usuario'];
+
+if(!isset($_SESSION['usuario'])) {
+  header('Location: index.php');
+}
+
+include 'conexao.php';
+
+$sql = "SELECT nivelusuario FROM usuario WHERE emailusuario = '$usuario' AND status = 'Ativo'";
+$buscar = mysqli_query($conexao, $sql);
+
+$array = mysqli_fetch_array($buscar);
+$nivel = $array['nivelusuario'];
+
+?>
+
   <div class="container" style="margin-top: 40px">
     <div class="row">
+<?php
+  if (($nivel == 1)||($nivel == 2)) {
+?>
 
       <div class="col-sm-6">
         <div class="card">
@@ -29,7 +51,7 @@
           </div>
         </div>
       </div>
-
+<?php }?>
       <div class="col-sm-6" style="margin-top: 20px">
         <div class="card">
           <div class="card-body">

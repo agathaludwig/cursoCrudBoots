@@ -5,7 +5,7 @@ include 'script/password.php';
 $usuario = $_POST['usuario'];
 $senhainformada = $_POST['senha'];
 
-$sql = "SELECT emailusuario, senhausuario  FROM usuario WHERE emailusuario = '$usuario'";
+$sql = "SELECT emailusuario, senhausuario  FROM usuario WHERE emailusuario = '$usuario' AND status = 'Ativo'";
 $buscar = mysqli_query($conexao, $sql);
 
 echo $total = mysqli_num_rows($buscar);
@@ -18,6 +18,8 @@ while ($array = mysqli_fetch_array($buscar)) {
     if ($total > 0) {
         echo "teste";
         if ($senha == $senhadecodificada) {
+            session_start();
+            $_SESSION['usuario'] = $usuario;
             header("Location: menu.php");    
         }
         else {

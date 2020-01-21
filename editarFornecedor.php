@@ -27,7 +27,14 @@ $id = $_GET['id'];
 </head>
 
 <body>
+<?php
+session_start();
+$usuario = $_SESSION['usuario'];
 
+if(!isset($_SESSION['usuario'])) {
+  header('Location: index.php');
+}
+?>
   <div class="container" id="tamanhoContainer" style="margin-top: 40px">
     <h4> Editar Fornecedor </h4>
     <form action="_atualizarFornecedor.php" method="post" style="margin-top: 20px">

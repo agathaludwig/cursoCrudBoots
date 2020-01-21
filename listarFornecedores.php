@@ -9,6 +9,14 @@
 </head>
 
 <body>
+<?php
+session_start();
+$usuario = $_SESSION['usuario'];
+
+if(!isset($_SESSION['usuario'])) {
+  header('Location: index.php');
+}
+?>
   <div class="container" style="margin-top: 40px; width: 500px">
     <h3> Lista de fornecedores </h3>
     <br>
